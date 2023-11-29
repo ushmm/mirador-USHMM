@@ -29,10 +29,6 @@ jobs:
     - run: yarn run build
       env:
         CI: true
-    
-    - run: yarn run build:es
-      env:
-        CI: true
    
     - name: Deploy to prod branch
       uses: ushmm/github-pages-deploy-action@3.7.1
