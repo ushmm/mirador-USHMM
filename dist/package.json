@@ -20,7 +20,7 @@
     "test:watch": "jest -c jest.json --watch",
     "build": "NODE_ENV=production webpack --mode=production",
     "build:dev": "webpack --mode=development",
-    "build:es": "mkdir -p build/dist/es && cp package.json build/dist/ && cp -r src build/dist/es && NODE_ENV=production MODULE_FORMAT=es babel build/dist/es -d build/dist/es",
+    "build:es": "mkdir -p dist/dist/es && cp package.json dist/dist/ && cp -r src dist/dist/es && NODE_ENV=production MODULE_FORMAT=es babel dist/dist/es -d dist/dist/es",
     "build:cjs": "mkdir -p dist/cjs && cp -r src dist/cjs && NODE_ENV=production MODULE_FORMAT=cjs babel dist/cjs -d dist/cjs",
     "build:watch": "webpack --watch --mode=development",
     "prepublishOnly": "npm run clean && npm run build:es && npm run build:cjs && npm run build",
