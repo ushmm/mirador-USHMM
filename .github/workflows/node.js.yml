@@ -29,6 +29,10 @@ jobs:
     - run: yarn run build
       env:
         CI: true
+    
+    - run: yarn run build:es
+      env:
+        CI: true
    
     - name: Deploy to prod branch
       uses: ushmm/github-pages-deploy-action@3.7.1
@@ -36,4 +40,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: PROD # The branch the action should deploy to.
         FOLDER: dist # The folder the action should deploy.
-        CLEAN: false # Automatically remove deleted files from the deploy branch
+        CLEAN: true # Automatically remove deleted files from the deploy branch
