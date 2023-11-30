@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import AddCircleIcon from '@material-ui/icons/AddCircleOutlineSharp';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircleOutlineSharp';
+import RotateRightIcon from '@material-ui/icons/RotateRightSharp';
 import PropTypes from 'prop-types';
 import RestoreZoomIcon from './icons/RestoreZoomIcon';
 import MiradorMenuButton from '../containers/MiradorMenuButton';
@@ -16,6 +17,7 @@ export class ZoomControls extends Component {
 
     this.handleZoomInClick = this.handleZoomInClick.bind(this);
     this.handleZoomOutClick = this.handleZoomOutClick.bind(this);
+    this.handleRotateClick = this.handleRotateClick.bind(this);
   }
 
   /**
@@ -37,6 +39,17 @@ export class ZoomControls extends Component {
 
     updateViewport(windowId, {
       zoom: viewer.zoom / 2,
+    });
+  }
+
+  /**
+   * @private
+   */
+  handleRotateClick() {
+    const { windowId, updateViewport, viewer } = this.props;
+    updateViewport(windowId, {
+      // eslint-disable-next-line react/prop-types
+      rotation: (viewer.rotation + 90) % 360,
     });
   }
 
@@ -65,6 +78,9 @@ export class ZoomControls extends Component {
         </MiradorMenuButton>
         <MiradorMenuButton aria-label={t('zoomReset')} onClick={() => zoomToWorld(false)}>
           <RestoreZoomIcon fontSize="large" />
+        </MiradorMenuButton>
+        <MiradorMenuButton aria-label="Rotate canvas" onClick={this.handleRotateClick}>
+          <RotateRightIcon fontSize="large" />
         </MiradorMenuButton>
         {displayDivider && <span className={classes.divider} />}
       </div>
