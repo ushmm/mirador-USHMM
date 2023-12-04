@@ -73,7 +73,7 @@ export class WindowTopBar extends Component {
             )}
             <MiradorMenuButton
               aria-label="Download image"
-              className={classNames(ns('window-download'), ns('window-menu-btn'))}
+              className={classNames(ns('window-download'), ns('window-menu-btn'), 'js-mirador-dl-btn')}
               onClick={(() => {
                 if (window.PubSub) {
                   window.PubSub.publish('MiradorDownload', windowId);
