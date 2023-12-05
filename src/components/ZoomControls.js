@@ -70,16 +70,16 @@ export class ZoomControls extends Component {
     }
     return (
       <div className={classes.zoom_controls}>
-        <MiradorMenuButton aria-label={t('zoomIn')} onClick={this.handleZoomInClick}>
+        <MiradorMenuButton className="js-mirador-image-control" aria-label={t('zoomIn')} onClick={this.handleZoomInClick}>
           <AddCircleIcon fontSize="large" />
         </MiradorMenuButton>
-        <MiradorMenuButton aria-label={t('zoomOut')} onClick={this.handleZoomOutClick}>
+        <MiradorMenuButton className="js-mirador-image-control" aria-label={t('zoomOut')} onClick={this.handleZoomOutClick}>
           <RemoveCircleIcon fontSize="large" />
         </MiradorMenuButton>
-        <MiradorMenuButton aria-label={t('zoomReset')} onClick={() => zoomToWorld(false)}>
+        <MiradorMenuButton className="js-mirador-image-control" aria-label={t('zoomReset')} onClick={() => zoomToWorld(false)}>
           <RestoreZoomIcon fontSize="large" />
         </MiradorMenuButton>
-        <MiradorMenuButton aria-label="Rotate canvas" onClick={this.handleRotateClick}>
+        <MiradorMenuButton className="js-mirador-image-control" aria-label="Rotate canvas" onClick={this.handleRotateClick}>
           <RotateRightIcon fontSize="large" />
         </MiradorMenuButton>
         {displayDivider && <span className={classes.divider} />}
