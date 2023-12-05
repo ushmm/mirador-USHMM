@@ -3,6 +3,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import MenuItem from '@material-ui/core/MenuItem';
 import ThumbnailsOffIcon from '@material-ui/icons/CropDinSharp';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ThumbnailNavigationBottomIcon from './icons/ThumbnailNavigationBottomIcon';
 import ThumbnailNavigationRightIcon from './icons/ThumbnailNavigationRightIcon';
@@ -41,7 +42,7 @@ export class WindowThumbnailSettings extends Component {
       <>
         <ListSubheader role="presentation" disableSticky tabIndex="-1">{t('thumbnails')}</ListSubheader>
 
-        <MenuItem className={classes.MenuItem} onClick={() => { this.handleChange('off'); handleClose(); }}>
+        <MenuItem className={classNames(classes.MenuItem, 'js-mirador-thumbnail-control')} onClick={() => { this.handleChange('off'); handleClose(); }}>
           <FormControlLabel
             value="off"
             classes={{ label: thumbnailNavigationPosition === 'off' ? classes.selectedLabel : classes.label }}
@@ -52,7 +53,7 @@ export class WindowThumbnailSettings extends Component {
             labelPlacement="bottom"
           />
         </MenuItem>
-        <MenuItem className={classes.MenuItem} onClick={() => { this.handleChange('far-bottom'); handleClose(); }}>
+        <MenuItem className={classNames(classes.MenuItem, 'js-mirador-thumbnail-control')} onClick={() => { this.handleChange('far-bottom'); handleClose(); }}>
           <FormControlLabel
             value="far-bottom"
             classes={{ label: thumbnailNavigationPosition === 'far-bottom' ? classes.selectedLabel : classes.label }}
@@ -63,7 +64,7 @@ export class WindowThumbnailSettings extends Component {
             labelPlacement="bottom"
           />
         </MenuItem>
-        <MenuItem className={classes.MenuItem} onClick={() => { this.handleChange('far-right'); handleClose(); }}>
+        <MenuItem className={classNames(classes.MenuItem, 'js-mirador-thumbnail-control')} onClick={() => { this.handleChange('far-right'); handleClose(); }}>
           <FormControlLabel
             value="far-right"
             classes={{ label: thumbnailNavigationPosition === 'far-right' ? classes.selectedLabel : classes.label }}

@@ -3,6 +3,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import SingleIcon from '@material-ui/icons/CropOriginalSharp';
+import classNames from 'classnames';
 import ScrollViewIcon from '@material-ui/icons/ViewColumn';
 import PropTypes from 'prop-types';
 import BookViewIcon from './icons/BookViewIcon';
@@ -51,7 +52,7 @@ export class WindowViewSettings extends Component {
     const menuItem = ({ value, Icon }) => (
       <MenuItem
         key={value}
-        className={classes.MenuItem}
+        className={classNames(classes.MenuItem, 'js-mirador-view-control')}
         autoFocus={windowViewType === value}
         onClick={() => { this.handleChange(value); handleClose(); }}
       >
